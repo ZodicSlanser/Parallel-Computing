@@ -1,6 +1,6 @@
-# CS353 - Parallel Computing
+# CS334 - Parallel Computing
 
-This repository contains tasks and materials related to the Parallel Computing subject (CS353) under the guidance of Eng. Mohammed El Gendy.
+This repository contains tasks and materials related to the Parallel Computing subject (CS334) under the guidance of Eng. Mohammed El Gendy.
 
 ## Task 1: Login and Registration
 
