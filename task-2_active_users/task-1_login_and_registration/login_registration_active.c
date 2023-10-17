@@ -3,6 +3,14 @@
 #include <string.h>
 #include <stdbool.h>
 
+void clearScreen() {
+#ifdef _WIN32
+    system("cls");
+#else
+    system("clear");
+#endif
+}
+
 #define MAX_USERS 10
 
 struct User {
@@ -21,24 +29,6 @@ struct User {
 struct User users[MAX_USERS];
 int userCount = 0;
 
-void clearScreen() {
-#ifdef _WIN32
-    system("cls");
-#else
-    system("clear");
-#endif
-}
-
-struct User users[MAX_USERS];
-int userCount = 0;
-
-void clearScreen() {
-#ifdef _WIN32
-    system("cls");
-#else
-    system("clear");
-#endif
-}
 
 void printFancyLoginArt() {
     printf("*********************************************\n");
