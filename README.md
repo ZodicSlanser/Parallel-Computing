@@ -2,7 +2,7 @@
 
 This repository contains tasks and materials related to the Parallel Computing subject (CS334) under the guidance of Eng. Mohammed El Gendy.
 
-## Task 1: Login and Registration (Folder: Task-1_login_and_registration)
+## Task 1: Login and Registration (Folder: task-1_login_and_registration)
 
 In this task, we implemented a basic login and registration system using C. The program allows users to register with a username, password, email, phone number, address, and age. Registered users can then log in to view their information.
 
@@ -16,7 +16,7 @@ In this task, we implemented a basic login and registration system using C. The 
 3. Compile the C code using a C compiler (e.g., `gcc login_registration.c -o login_registration`).
 4. Run the executable (e.g., `./login_registration`).
 
-## Task 2: Active Users (Folder: Task-2_active_users)
+## Task 2: Active Users (Folder: task-2_active_users)
 
 In this task, we extended the functionality of the login and registration system to include an 'active' status for users. A user can be marked as either active or inactive. Inactive users are denied access during login.
 
