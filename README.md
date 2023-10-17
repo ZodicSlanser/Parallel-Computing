@@ -2,22 +2,41 @@
 
 This repository contains tasks and materials related to the Parallel Computing subject (CS334) under the guidance of Eng. Mohammed El Gendy.
 
-## Task 1: Login and Registration
+## Task 1: Login and Registration (Folder: Task-1_login_and_registration)
 
-### Description
-
-In this task, we implemented a basic console-based login and registration system using C. It provides a simple menu for users to either log in or register.
+In this task, we implemented a basic login and registration system using C. The program allows users to register with a username, password, email, phone number, address, and age. Registered users can then log in to view their information.
 
 ### Files
+- `login_registration.c`: Contains the main C code for the login and registration system.
+- `README.md`: This file.
 
-- `login_registration.c`: This file contains the C code for the login and registration system.
-- `README.md`: This file (you are here) provides an overview of the tasks and repository.
+### How to Run
+1. Open a terminal or command prompt.
+2. Navigate to the Task-1_login_and_registration directory.
+3. Compile the C code using a C compiler (e.g., `gcc login_registration.c -o login_registration`).
+4. Run the executable (e.g., `./login_registration`).
 
-### Instructions
+## Task 2: Active Users (Folder: Task-2_active_users)
 
-1. To compile and run the code, use a C compiler (e.g., `gcc`).
-2. Execute the compiled binary to interact with the login and registration system.
-3. Follow the on-screen instructions to either log in or register.
+In this task, we extended the functionality of the login and registration system to include an 'active' status for users. A user can be marked as either active or inactive. Inactive users are denied access during login.
 
+### Files
+- `active_users.c`: Contains the updated C code with active user status functionality.
+
+### How to Run
+1. Open a terminal or command prompt.
+2. Navigate to the Task-2_active_users directory.
+3. Compile the C code using a C compiler (e.g., `gcc active_users.c -o active_users`).
+4. Run the executable (e.g., `./active_users`).
+
+### Additional Notes
+- Make sure to review the source code for specific implementation details.
+
+---
+
+### Task Progress
+
+- [x] Task 1: Login and Registration
+- [x] Task 2: Active Users
 
 
