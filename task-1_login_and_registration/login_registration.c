@@ -1,30 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
+#define MAX_USERS 10
 
-void clearScreen() {
-
-#ifdef _WIN32
-    system("cls");
-#else
-    system("clear");
-#endif
-}
-
+struct User {
     char username[20];
     char password[20];
     char email[20];
     char phone[20];
     char address[20];
     int age;
+};
 
-void printFancyRegistrationArt() {
-    printf("*********************************************\n");
-    printf("*                                           *\n");
-    printf("*         Welcome to My App Registration    *\n");
-    printf("*                                           *\n");
-    printf("*********************************************\n");
-    printf("\n");
+struct User users[MAX_USERS];
+int userCount = 0;
+
+void clearScreen() {
+#ifdef _WIN32
+    system("cls");
+#else
+    system("clear");
+#endif
 }
 
 void printFancyLoginArt() {
@@ -36,43 +33,46 @@ void printFancyLoginArt() {
     printf("\n");
 }
 
+void printFancyRegistrationArt() {
+    printf("*********************************************\n");
+    printf("*                                           *\n");
+    printf("*         Welcome to My App Registration    *\n");
+    printf("*                                           *\n");
+    printf("*********************************************\n");
+    printf("\n");
+}
+
 void registerUser() {
-    char regUsername[20];
-    char regPassword[20];
-    char regEmail[20];
-    char regPhone[20];
-    char regAddress[20];
-    int regAge;
+    if (userCount >= MAX_USERS) {
+        printf("Maximum number of users reached!\n");
+        return;
+    }
+
+    struct User newUser;
 
     printf("Enter username: ");
-    scanf("%s", regUsername);
+    scanf("%s", newUser.username);
 
     printf("Enter password: ");
-    scanf("%s", regPassword);
+    scanf("%s", newUser.password);
 
     printf("Enter email: ");
-    scanf("%s", regEmail);
+    scanf("%s", newUser.email);
 
     printf("Enter phone: ");
-    scanf("%s", regPhone);
+    scanf("%s", newUser.phone);
 
     printf("Enter address: ");
-    scanf("%s", regAddress);
+    scanf("%s", newUser.address);
 
     printf("Enter age: ");
-    scanf("%d", &regAge);
+    scanf("%d", &newUser.age);
 
-    strcpy(username, regUsername);
-    strcpy(password, regPassword);
-    strcpy(email, regEmail);
-    strcpy(phone, regPhone);
-    strcpy(address, regAddress);
-    age = regAge;
+    users[userCount++] = newUser;
 
     printf("\nRegistration successful!\n");
-
     printf("Press any key to continue...");
-    getchar(); 
+    getchar();
 }
 
 void loginUser() {
@@ -84,24 +84,25 @@ void loginUser() {
     printf("Enter password: ");
     scanf("%s", loginPassword);
 
-    if (strcmp(loginUsername, username) != 0 || strcmp(loginPassword, password) != 0) {
-        printf("Invalid username or password!\n");
-        return;
+    for (int i = 0; i < userCount; i++) {
+        if (strcmp(loginUsername, users[i].username) == 0 &&
+            strcmp(loginPassword, users[i].password) == 0) {
+            printf("Login successful!\n");
+
+            printf("Welcome, %s!\n", users[i].username);
+            printf("Your email is %s\n", users[i].email);
+            printf("Your phone is %s\n", users[i].phone);
+            printf("Your address is %s\n", users[i].address);
+            printf("Your age is %d\n", users[i].age);
+
+            printf("\n");
+            printf("Returning to main menu...\n");
+            return;
+        }
     }
 
-    printf("Login successful!\n");
-
-    printf("Welcome, %s!\n", username);
-    printf("Your email is %s\n", email);
-    printf("Your phone is %s\n", phone);
-    printf("Your address is %s\n", address);
-    printf("Your age is %d\n", age);
-
-    printf("\n");
-    printf("Returning to main menu...\n");
+    printf("Invalid username or password!\n");
 }
-
-
 
 int main(void) {
     int choice;
@@ -154,4 +155,3 @@ int main(void) {
 
     return 0;
 }
-
